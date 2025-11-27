@@ -1,7 +1,6 @@
 # dlt_ockero
 
-# SS12000 Data Pipeline with dlt
-
+## SS12000 Data Pipeline with dlt
 A data pipeline built with [dlt (data load tool)](https://dlthub.com/) to extract and load data from SS12000 API endpoints.
 
 ## About
@@ -19,7 +18,6 @@ SS12000 is a specification for student information systems in Sweden, providing 
 ## Features
 
 - 🔄 Automated data extraction from SS12000 endpoints
-- 📊 Loads data to Azure Blob Storage (configurable to other destinations)
 - 🔐 Secure credential management with dlt secrets
 - 📈 Handles pagination and nested data structures
 - 🚀 Incremental loading support
@@ -34,13 +32,7 @@ SS12000 is a specification for student information systems in Sweden, providing 
 
 1. Clone the repository:
 2. Create and activate a virtual environment:
-
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-3. Install dependencies:
-pip install -r requirements.txt
-
+3. Install dependencies: pip install -r requirements.txt
 
 ## Configuration
 1. .Env  -- use this!
@@ -62,15 +54,16 @@ The pipeline will:
 ## Project Structure
 ```
 .
-├── main.py                 # Main pipeline execution
+├── main.py             # Main pipeline execution
 ├── sources/
-│   └── wint_source.py     # SS12000 API source configuration
-├── pipeline.py            # Pipeline utilities
-├── .dlt/                  # dlt configuration (not in git)
+│   └── source.py       # SS12000 API source configuration
+├── pipeline.py         # Pipeline utilities
+├── .dlt/               # dlt configuration (not in git)
 │   ├── config.toml
 │   └── secrets.toml
-├── requirements.txt       # Python dependencies
-└── README.md
+├── requirements.txt        # Python dependencies
+├── README.md
+└── .env               # Store keys and stuff (not in git)
 ```
 
 ## Endpoints
@@ -78,22 +71,11 @@ The pipeline will:
 
 ## Development
 
-
-
 **Authentication errors?**
-- Verify your API key in `.dlt/secrets.toml`
+- Verify your API key in `.env` or `.dlt/secrets.toml`
 - Check API endpoint URLs and permissions
 
 ## Resources
 
 - [dlt Documentation](https://dlthub.com/docs)
-- [SS12000 Specification](https://www.sis.se/en/produkter/information-technology-office-machines/it-applications/ss-12000/)
 - [dlt Slack Community](https://dlthub.com/community)
-
-## License
-
-[Your chosen license]
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
