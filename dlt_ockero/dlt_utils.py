@@ -1,15 +1,11 @@
 import dlt
-from sources.test_source import *
-from sources.wint_source import *
+from source import *
 from datetime import datetime
 
-from datetime import datetime
 
 def run_pipeline(pipeline, source):
     info = pipeline.run(source,loader_file_format="parquet")
     print_pipeline_info(info,pipeline)
-
-
 
 
 def print_pipeline_info(info,pipeline):
