@@ -1,0 +1,4 @@
+typer
+duckdb
+dbt-duckdb
+dlt==1.18.2

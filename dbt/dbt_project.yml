@@ -1,0 +1,39 @@
+name: 'dbt_project'
+version: '1.0.0'
+
+profile: 'dbt-island-duckdb'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+on-run-end:
+
+models:
+  dbt_project:
+    # Config indicated by + and applies to all files under models/example/
+    1-raw:
+      +materialized: view
+      +schema: land
+      +tags: land
+      
+      disabled:
+        +enabled: false
+
+    2-staging:
+      +materialized: table
+      +schema: staging
+      +tags:
+        - staging
+      +post_hook: "{{ export_csv_to_folder(this) }}"
+
+      disabled:
+        +enabled: false

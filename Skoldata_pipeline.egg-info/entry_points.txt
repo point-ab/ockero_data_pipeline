@@ -1,0 +1,2 @@
+[console_scripts]
+run-skola-pipeline = ockero_data_pipeline.cli:app
