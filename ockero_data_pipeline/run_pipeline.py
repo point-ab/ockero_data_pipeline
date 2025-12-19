@@ -2,7 +2,7 @@ import subprocess
 import sys
 import os
 from pathlib import Path
-from utils.logger import PipelineLogger, Timer
+from ockero_data_pipeline.utils.logger import PipelineLogger, Timer
 
 # Set folder name for different steps
 dlt_folder = "dlt"

@@ -1,10 +1,3 @@
-import dlt
-from source_ss12000 import *
-from source_schoolsoft import *
-
-from datetime import datetime
-
-
 def run_pipeline(pipeline, source):
     info = pipeline.run(source,loader_file_format="parquet")
     print_pipeline_info(info,pipeline)

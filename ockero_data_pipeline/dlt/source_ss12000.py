@@ -1,4 +1,3 @@
-import dlt
 from dlt.sources.rest_api import rest_api_source
 import os
 from dotenv import load_dotenv

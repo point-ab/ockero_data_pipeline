@@ -1,4 +1,4 @@
-import dlt
+from ockero_data_pipeline import dlt
 import json
 from pathlib import Path
 

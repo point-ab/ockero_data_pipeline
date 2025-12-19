@@ -1,5 +1,4 @@
-
-import dlt
+from ockero_data_pipeline import dlt
 import requests
 import csv
 from io import StringIO
