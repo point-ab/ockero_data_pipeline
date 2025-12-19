@@ -15,6 +15,7 @@ dependencies = [
     "duckdb",
     "dbt-duckdb",
     "dlt==1.18.2"
+    python-dotenv==1.2.1
     # Add all your other dependencies here
 ]
 
@@ -24,4 +25,4 @@ exclude = ["dbt", "data*", "dlt"]  # Exclude dbt, data, dlt folders
 
 
 [project.scripts]
-run-skola-pipeline = "ockero_data_pipeline=cli:app"  # This creates a command you can run from anywhere
+run-skola-pipeline = "ockero_data_pipeline.cli:app"  # This creates a command you can run from anywhere
