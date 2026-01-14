@@ -2,12 +2,12 @@ import subprocess
 import sys
 import os
 from pathlib import Path
-from ockero_data_pipeline.utils.logger import PipelineLogger, Timer
+from extract_and_transform.utils.logger import PipelineLogger, Timer
 
 # Set folder name for different steps
-dlt_folder = "dlt"
-dlt_pipeline_file = "pipeline.py" 
-dbt_folder = "dbt"
+dlt_folder = "dlt_extract"
+dlt_pipeline_file = "dlt_extract_pipeline.py" 
+dbt_folder = "dbt_transform"
 
 
 def run_dlt_pipeline(logger, timer):
@@ -22,7 +22,7 @@ def run_dlt_pipeline(logger, timer):
     
     try:
         result = subprocess.run(
-            [sys.executable, "pipeline.py"],
+            [sys.executable, dlt_pipeline_file],
             check=True,
             capture_output=True,
             text=True

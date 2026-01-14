@@ -1,12 +1,10 @@
-from ockero_data_pipeline import dlt
+import dlt
 import json
 from pathlib import Path
 
 
-
-
 file_path = Path(__file__).resolve()
-target_path = file_path.parent.parent / "data"/ "data_in" / "TestDataElin.txt"
+target_path = file_path.parent.parent.parent / "data"/ "data_in" / "TestDataElin.txt"
 
 
 

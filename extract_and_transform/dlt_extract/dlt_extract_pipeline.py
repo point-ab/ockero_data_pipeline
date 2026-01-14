@@ -1,8 +1,8 @@
-import ockero_data_pipeline
 from dlt_utils import *
 from source_schoolsoft import *
 from source_elin_testdata import *
-from ockero_data_pipeline import dlt
+
+import dlt
 from dotenv import load_dotenv
 from pathlib import Path
 
@@ -10,7 +10,7 @@ load_dotenv()
 
 
 # Resolve duckdb inside project/data/db_.duckdb
-project_root = Path(__file__).resolve().parent.parent
+project_root = Path(__file__).resolve().parent.parent.parent
 duckdb_path = project_root / "data" / "db_pipeline.duckdb"
 
 
@@ -25,13 +25,13 @@ if __name__ == "__main__":
     # )   
 
     # Create a DLT pipeline
-    pipeline_schoolsoft = ockero_data_pipeline.dlt.pipeline(
+    pipeline_schoolsoft = dlt.pipeline(
         pipeline_name="schoolsoft_pipeline",
         destination=dlt.destinations.duckdb(duckdb_path), # absolut path, to sync with dbt project path!
         dataset_name="dlt_schoolsoft"
     )
         # Create a DLT pipeline
-    pipeline_elin_testdata = ockero_data_pipeline.dlt.pipeline(
+    pipeline_elin_testdata = dlt.pipeline(
         pipeline_name="elin_testdata",
         destination=dlt.destinations.duckdb(duckdb_path), # absolut path, to sync with dbt project path!
         dataset_name="dlt_elin_testdata"

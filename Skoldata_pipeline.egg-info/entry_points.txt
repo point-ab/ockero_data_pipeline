@@ -1,0 +1,2 @@
+[console_scripts]
+run-schoolapp = extract_and_transform.cli:app

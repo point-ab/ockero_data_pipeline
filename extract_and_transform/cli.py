@@ -1,4 +1,4 @@
-from ockero_data_pipeline.run_pipeline import *
+from extract_and_transform.run_pipeline import *
 
 import typer
 

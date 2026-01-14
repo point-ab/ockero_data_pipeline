@@ -1,5 +1,5 @@
 {% macro export_csv_to_folder(model_name) %}
-  {% set export_path = '../data/' ~ model_name.name ~ '.csv' %}
+  {% set export_path = '../../data/' ~ model_name.name ~ '.csv' %}
   {% set sql %}
     COPY (SELECT * FROM {{ model_name }})
     TO '{{ export_path }}'
