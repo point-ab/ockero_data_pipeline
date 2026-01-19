@@ -4,7 +4,7 @@ from pathlib import Path
 
 
 file_path = Path(__file__).resolve()
-target_path = file_path.parent.parent.parent / "data"/ "data_in" / "TestDataElin.txt"
+target_path = file_path.parent.parent.parent /"data_in" / "TestDataElin.txt"
 
 
 

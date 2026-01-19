@@ -1,0 +1,8 @@
+dbt-island-duckdb:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: ../../data/db_pipeline.duckdb
+      extensions:
+        - parquet

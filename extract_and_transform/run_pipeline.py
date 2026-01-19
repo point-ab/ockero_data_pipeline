@@ -49,18 +49,29 @@ def run_dbt_transformations(logger, timer):
     logger.print_section("STEP 2: DBT")
     
     timer.start()
-    dbt_dir = Path(__file__).parent /dbt_folder
-    os.chdir(dbt_dir)
+    dbt_dir = Path(__file__).parent / dbt_folder
+    
+    # Path to profiles.yml (two levels up from dbt_transform folder)
+    profiles_dir = Path(__file__).parent.parent
     
     logger.print_step(2, 2, "START", "dbt run")
     logger.print_with_timestamp("")
 
     try:
-        # Run dbt deps silently
-        subprocess.run(["dbt", "deps"], check=True, capture_output=True)
+        # Run dbt deps with custom profiles directory
+        subprocess.run(
+            ["dbt", "deps", "--profiles-dir", str(profiles_dir)],
+            check=True,
+            capture_output=True,
+            cwd=dbt_dir
+        )
         
-        # Run dbt models with output directly to terminal
-        subprocess.run(["dbt", "run"], check=True)
+        # Run dbt models with custom profiles directory
+        subprocess.run(
+            ["dbt", "run", "--profiles-dir", str(profiles_dir)],
+            check=True,
+            cwd=dbt_dir
+        )
         
         elapsed = timer.elapsed()
         logger.print_with_timestamp("")
