@@ -8,22 +8,17 @@ def create_venv():
     print("Creating virtual environment...")
     subprocess.run([sys.executable, "-m", "venv", "venv"], check=True)
 
-def activate_venv():
+def install_requirements():
+    print("Installing project in editable mode...")
     system = platform.system()
     if system == "Windows":
         activate_script = os.path.join("venv", "Scripts", "activate")
-        return f"call {activate_script}"
+        pip_install_cmd = f'call "{activate_script}" && pip install -e .'
+        subprocess.run(pip_install_cmd, shell=True, check=True)
     else:  # macOS/Linux
         activate_script = os.path.join("venv", "bin", "activate")
-        return f"source {activate_script}"
-
-def install_requirements():
-    print("Installing project in editable mode...")
-    activate_cmd = activate_venv()
-    if platform.system() == "Windows":
-        subprocess.run(f"{activate_cmd} && pip install -e .", shell=True)
-    else:
-        subprocess.run(f"{activate_cmd} && pip install -e .", shell=True, executable="/bin/bash")
+        pip_install_cmd = f'source "{activate_script}" && pip install -e .'
+        subprocess.run(pip_install_cmd, shell=True, executable="/bin/bash", check=True)
 
 def create_data_folder():
     print("Creating 'data' folder...")

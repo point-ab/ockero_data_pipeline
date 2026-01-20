@@ -41,7 +41,7 @@ if __name__ == "__main__":
     from extract_and_transform.dlt_extract.source_schoolsoft import schoolsoft_source
     from extract_and_transform.dlt_extract.source_elin_testdata import load_data_from_file
 
-    #run_pipeline(pipeline_schoolsoft, schoolsoft_source())
+    run_pipeline(pipeline_schoolsoft, schoolsoft_source())
     run_pipeline(pipeline_elin_testdata, load_data_from_file())
 
 
