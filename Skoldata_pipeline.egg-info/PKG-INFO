@@ -8,4 +8,5 @@ Requires-Dist: typer
 Requires-Dist: duckdb
 Requires-Dist: dbt-duckdb
 Requires-Dist: dlt==1.18.2
+Requires-Dist: dlt[parquet]==1.18.2
 Requires-Dist: python-dotenv==1.2.1

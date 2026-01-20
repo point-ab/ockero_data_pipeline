@@ -1,3 +1,4 @@
+dist
 docs
 extract_and_transform
 utils

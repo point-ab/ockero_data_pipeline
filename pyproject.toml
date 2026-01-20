@@ -15,6 +15,7 @@ dependencies = [
     "duckdb",
     "dbt-duckdb",
     "dlt==1.18.2",
+    "dlt[parquet]==1.18.2",
     "python-dotenv==1.2.1"
     # Add all your other dependencies here
 ]
