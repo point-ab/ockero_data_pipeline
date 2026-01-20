@@ -4,9 +4,9 @@ Version: 0.1.0
 Summary: This is a application for extract data from Schoolsoft API and transform that data with DBT
 Author-email: Mattias <mattias.ivarsson@point.design>
 Requires-Python: >=3.8
-Requires-Dist: typer
-Requires-Dist: duckdb
-Requires-Dist: dbt-duckdb
+Requires-Dist: typer==0.20.0
+Requires-Dist: duckdb==1.4.2
+Requires-Dist: dbt-duckdb==1.10.0
 Requires-Dist: dlt==1.18.2
 Requires-Dist: dlt[parquet]==1.18.2
 Requires-Dist: python-dotenv==1.2.1

@@ -11,18 +11,18 @@ description = "This is a application for extract data from Schoolsoft API and tr
 requires-python = ">=3.8"
 
 dependencies = [
-    "typer",
-    "duckdb",
-    "dbt-duckdb",
+    "typer==0.20.0",
+    "duckdb==1.4.2",
+    "dbt-duckdb==1.10.0",
     "dlt==1.18.2",
     "dlt[parquet]==1.18.2",
     "python-dotenv==1.2.1"
     # Add all your other dependencies here
 ]
 
+
 [tool.setuptools.packages.find]
 exclude = ["data*"]  # Exclude dbt, data, dlt folders
-
 
 
 [project.scripts]

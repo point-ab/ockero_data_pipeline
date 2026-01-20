@@ -16,5 +16,4 @@ extract_and_transform/dlt_extract/source_schoolsoft.py
 extract_and_transform/dlt_extract/source_ss12000.py
 extract_and_transform/utils/__init__.py
 extract_and_transform/utils/logger.py
-extract_and_transform/utils/utils.py
 venv/bin/daff.py
